@@ -8,6 +8,7 @@ Set these variables before executing the commands below.
 
 ```bash
 export ENV=your_confluent_env
+export CID=your_confluent_cluster_id
 export TOKEN=your_security_token
 export SECRET=your_security_secret
 export SR=http://you-sr
@@ -28,9 +29,9 @@ ccloud schema-registry schema describe --subject users-value --version latest
 ## Create a topic
 
 ```bash
-ccloud kafka topic create --cluster lkc-5mw18 transactions-avro
+ccloud kafka topic create --cluster $CID transactions-avro
 
-ccloud kafka topic create --cluster lkc-5mw18 transactions-proto
+ccloud kafka topic create --cluster $CID transactions-proto
 ```
 
 ## Create schema
