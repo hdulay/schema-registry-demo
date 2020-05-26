@@ -37,9 +37,15 @@ ccloud kafka topic create --cluster $CID transactions-proto
 ## Create schema
 
 ```bash
-ccloud schema-registry schema create --subject transactions-value --schema avro/src/main/resources/avro/io/confluent/examples/clients/basicavro/Payment.avsc --type AVRO
+ccloud schema-registry schema create \
+    --subject transactions-value \
+    --schema avro/src/main/resources/avro/io/confluent/examples/clients/basicavro/Payment.avsc \
+    --type AVRO
 
-ccloud schema-registry schema create --subject transactions-proto-value --schema person.proto --type PROTOBUF
+ccloud schema-registry schema create \
+    --subject transactions-proto-value \
+    --schema person.proto \
+    --type PROTOBUF
 ```
 
 ## Create v2 schema
